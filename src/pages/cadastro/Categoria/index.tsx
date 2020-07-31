@@ -19,7 +19,9 @@ export default function CadastroCategoria() {
 
   useEffect(() => {
     const searchCategories = async () => {
-      const URL = 'http://localhost:3333/categorias';
+      const URL = window.location.hostname.includes('localhost')
+        ? 'http://localhost:3333/categorias'
+        : '';
       const res = await fetch(URL);
       const json = await res.json();
       console.log(json);
