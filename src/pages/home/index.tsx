@@ -26,6 +26,7 @@ const Home = () => {
         setInitialData(res);
       })
       .catch((_) => {
+        console.log(_);
         alert('Erro na requisição dos vídeos');
       });
   }, []);
