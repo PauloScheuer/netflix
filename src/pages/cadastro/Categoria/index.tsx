@@ -1,7 +1,9 @@
-import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
+import React, { useState, useEffect, FormEvent } from 'react';
 import PageDefault from '../../../components/PageDefault';
 import { Link } from 'react-router-dom';
 import FormField from '../../../components/FormField';
+import useForm from '../../../hooks/useForm';
+import URL from '../../../config/';
 
 interface Category {
   name: string;
@@ -10,18 +12,17 @@ interface Category {
 }
 
 export default function CadastroCategoria() {
-  const [valuesCategory, setValuesCategory] = useState<Category>({
+  const initialValues = {
     name: '',
     description: '',
     color: '',
-  });
+  };
   const [categories, setNewCategories] = useState<Category[]>([]);
+
+  const { values, handleValuesChange, clearForm } = useForm(initialValues);
 
   useEffect(() => {
     const searchCategories = async () => {
-      const URL = window.location.hostname.includes('localhost')
-        ? 'http://localhost:3333/categorias'
-        : '';
       const res = await fetch(URL);
       const json = await res.json();
       console.log(json);
@@ -30,48 +31,39 @@ export default function CadastroCategoria() {
     searchCategories();
   }, []);
 
-  const handleValuesChange = (event: ChangeEvent<any>) => {
-    const value = event.target.value;
-    const name = event.target.name;
-    setValuesCategory({
-      ...valuesCategory,
-      [name]: value,
-    });
-  };
-
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     const copyCategories = [...categories];
-    const newCategory = valuesCategory;
+    const newCategory = values;
     copyCategories.push(newCategory);
-    setValuesCategory({ name: '', description: '', color: '' });
+    clearForm();
     setNewCategories(copyCategories);
   };
 
   return (
     <PageDefault>
       <h1>Página de cadastro de categoria</h1>
-      <h1>Cadastro de Categoria: {valuesCategory.name}</h1>
+      <h1>Cadastro de Categoria: {values.name}</h1>
 
       <form onSubmit={handleSubmit}>
         <FormField
           label="Nome da categoria"
           name="name"
-          value={valuesCategory.name}
+          value={values.name}
           type="text"
           onChange={handleValuesChange}
         />
         <FormField
           label="Descrição da categoria"
           name="description"
-          value={valuesCategory.description}
+          value={values.description}
           type="textarea"
           onChange={handleValuesChange}
         />
         <FormField
           label="Cor"
           name="color"
-          value={valuesCategory.color}
+          value={values.color}
           type="color"
           onChange={handleValuesChange}
         />

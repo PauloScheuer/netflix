@@ -1,16 +1,207 @@
 {
-  "categorias": [
+  "categories": [
     {
       "id": 1,
       "name": "Front End",
-      "description": "Uma categoria topper",
-      "color": "#2d5bfc"
+      "description": "nananannanana",
+      "color": "#6BD1FF",
+      "link_extra": {
+        "text": "Curso sobre aprendizado na Alura",
+        "url": "https://alura.com.br/curso-online-aprender-a-aprender-tecnicas-para-seu-autodesenvolvimento"
+      }
     },
     {
       "id": 2,
       "name": "Back End",
-      "description": "Outra categoria topper",
-      "color": "#2eda02"
+      "description": "nananannanana",
+      "color": "#00C86F",
+      "link_extra": {
+        "text": "Curso sobre aprendizado na Alura",
+        "url": "https://alura.com.br/curso-online-aprender-a-aprender-tecnicas-para-seu-autodesenvolvimento"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Data science e inteligência artificial",
+      "description": "nananannanana",
+      "color": "#9cd33b",
+      "link_extra": {
+        "text": "Curso sobre aprendizado na Alura",
+        "url": "https://alura.com.br/curso-online-aprender-a-aprender-tecnicas-para-seu-autodesenvolvimento"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Aprendendo a aprender tecnologia",
+      "description": "nananannanana",
+      "color": "#6b5be2",
+      "link_extra": {
+        "text": "Curso sobre aprendizado na Alura",
+        "url": "https://alura.com.br/curso-online-aprender-a-aprender-tecnicas-para-seu-autodesenvolvimento"
+      }
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "title": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
+      "categoryId": 1,
+      "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
+    },
+    {
+      "id": 2,
+      "title": "SEO com React",
+      "categoryId": 1,
+      "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
+    },
+    {
+      "id": 3,
+      "title": "Componentização com VanillaJS #AluraMais",
+      "categoryId": 1,
+      "url": "https://www.youtube.com/watch?v=LatCKpcOMak"
+    },
+    {
+      "id": 4,
+      "title": "Pare de chutar e aprenda a display: inline #01",
+      "categoryId": 1,
+      "url": "https://www.youtube.com/watch?v=5PS6ku8NzIE"
+    },
+    {
+      "id": 5,
+      "title": "Template String: Interpolando strings com JavaScript #AluraMais",
+      "categoryId": 1,
+      "url": "https://www.youtube.com/watch?v=ORI_HTXaIw0"
+    },
+    {
+      "id": 6,
+      "title": "Qual é a melhor linguagem de programação? #HipstersPontoTube",
+      "categoryId": 1,
+      "url": "https://www.youtube.com/watch?v=Uh-GNH-t89w"
+    },
+    {
+      "id": 7,
+      "title": "Novidades do Angular v9",
+      "categoryId": 1,
+      "url": "https://www.youtube.com/watch?v=34uHo7hFmG0"
+    },
+    {
+      "id": 8,
+      "title": "Base para aprender os frameworks",
+      "categoryId": 1,
+      "url": "https://www.youtube.com/watch?v=QzDjdlF1BQI"
+    },
+    {
+      "id": 9,
+      "title": "PERCURSO em NÍVEL em ÁRVORE BINÁRIA | Estruturas de Dados #14",
+      "categoryId": 2,
+      "url": "https://www.youtube.com/watch?v=UOK7nS2E9xM"
+    },
+    {
+      "id": 10,
+      "title": "Coders4Tips - S01E04: GitHub CLI - Uma Nova Experiência no Github!",
+      "categoryId": 2,
+      "url": "https://www.youtube.com/watch?v=6o6-bKOZOEY"
+    },
+    {
+      "id": 11,
+      "title": "Programei 4 robôs que criam vídeos para mim no YouTube",
+      "categoryId": 2,
+      "url": "https://www.youtube.com/watch?v=kjhu1LEmRpY"
+    },
+    {
+      "id": 12,
+      "title": "API: Dicionário do Programador",
+      "categoryId": 2,
+      "url": "https://www.youtube.com/watch?v=vGuqKIRWosk"
+    },
+    {
+      "id": 13,
+      "title": "Usando Git Direito",
+      "categoryId": 2,
+      "url": "https://www.youtube.com/watch?v=6OokP-NE49k"
+    },
+    {
+      "id": 14,
+      "title": "Teste de Turing",
+      "categoryId": 3,
+      "url": "https://www.youtube.com/watch?v=BaPGU4JWa34"
+    },
+    {
+      "id": 15,
+      "title": "O que é Data Science?",
+      "categoryId": 3,
+      "url": "https://www.youtube.com/watch?v=5b9Z8toVaAU&t=9s"
+    },
+    {
+      "id": 16,
+      "title": "Melhor forma de aprender Python",
+      "categoryId": 3,
+      "url": "https://www.youtube.com/watch?v=Gojqw9BQ5qY"
+    },
+    {
+      "id": 17,
+      "title": "Como ingressar no mercado de Data Science?",
+      "categoryId": 3,
+      "url": "https://www.youtube.com/watch?v=gxyjGmOV540"
+    },
+    {
+      "id": 18,
+      "title": "Como estudar melhor?",
+      "categoryId": 4,
+      "url": "https://www.youtube.com/watch?v=Is6c9KSGCbk&feature=youtu.be"
+    },
+    {
+      "id": 19,
+      "title": "Faculdade",
+      "categoryId": 4,
+      "url": "https://www.youtube.com/watch?v=jw06H8esyzQ&feature=youtu.be"
+    },
+    {
+      "id": 20,
+      "title": "Frameworks",
+      "categoryId": 4,
+      "url": "https://www.youtube.com/watch?v=QzDjdlF1BQI"
+    },
+    {
+      "id": 21,
+      "title": "A mágica do Aprendizado",
+      "categoryId": 4,
+      "url": "https://www.youtube.com/watch?v=oTEXzpfEpPY"
+    },
+    {
+      "id": 22,
+      "title": "Como aprender a programar?",
+      "categoryId": 4,
+      "url": "https://www.youtube.com/watch?v=MwCx2qKdbDw&feature=youtu.be"
+    },
+    {
+      "title": "Novo título",
+      "url": "https://www.youtube.com/watch?v=_jqYXrv2Kdw",
+      "categoryId": 1,
+      "id": 23
+    },
+    {
+      "title": "Novo título",
+      "url": "https://www.youtube.com/watch?v=_jqYXrv2Kdw",
+      "id": 24
+    },
+    {
+      "title": "Novo título",
+      "url": "https://www.youtube.com/watch?v=_jqYXrv2Kdw",
+      "categoryId": 1,
+      "id": 25
+    },
+    {
+      "title": "Novo título",
+      "url": "https://www.youtube.com/watch?v=_jqYXrv2Kdw",
+      "categoryId": 2,
+      "id": 26
+    },
+    {
+      "title": "dfghjk",
+      "url": "cdfghjm",
+      "categoryId": 3,
+      "id": 27
     }
   ]
 }

@@ -8,6 +8,7 @@ interface FormType {
   name: string;
   value: string;
   onChange: (event: ChangeEvent) => void;
+  suggestions: string[];
 }
 
 const Section = styled.section`
@@ -83,7 +84,9 @@ export default function FormField({
   name,
   value,
   onChange,
+  suggestions,
 }: FormType) {
+  const hasSuggestions = Boolean(suggestions.length);
   return (
     <Section>
       <Label htmlFor={`id_${name}`}>
@@ -94,10 +97,25 @@ export default function FormField({
           name={name}
           value={value}
           onChange={onChange}
+          list={`suggestions_id${name}`}
         />
 
         <Label.Text>{label}</Label.Text>
       </Label>
+      {hasSuggestions && (
+        <datalist id={`suggestions_id${name}`}>
+          {suggestions.map((suggie, index) => {
+            return (
+              <option value={suggie} key={index}>
+                {suggie}
+              </option>
+            );
+          })}
+        </datalist>
+      )}
     </Section>
   );
 }
+FormField.defaultProps = {
+  suggestions: [],
+};

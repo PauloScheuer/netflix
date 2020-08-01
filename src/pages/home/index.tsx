@@ -1,27 +1,58 @@
-import React from 'react';
-import Menu from '../../components/Menu';
+import React, { useEffect, useState } from 'react';
 import BannerMain from '../../components/BannerMain';
 import Carousel from '../../components/Carousel';
-import Footer from '../../components/Footer';
+import searchCategories from '../../repositories/categories';
+import PageDefault from '../../components/PageDefault';
 
-import initialData from '../../data/initialData.json';
+interface InitialData {
+  id: number;
+  name: string;
+  description: string;
+  color: string;
+  videos: [
+    {
+      title: string;
+      categoryId: number;
+      url: string;
+    }
+  ];
+}
 
 const Home = () => {
+  const [initialData, setInitialData] = useState<InitialData[]>([]);
+  useEffect(() => {
+    searchCategories()
+      .then((res) => {
+        setInitialData(res);
+      })
+      .catch((_) => {
+        alert('Erro na requisição dos vídeos');
+      });
+  }, []);
   return (
     <div style={{ backgroundColor: '#141414' }}>
-      <Menu />
+      <PageDefault hasPadding={true}>
+        {initialData.length > 0 && (
+          <>
+            <BannerMain
+              videoTitle={initialData[0].videos[0].title}
+              url={initialData[0].videos[0].url}
+              videoDescription={'Descrição'}
+            />
 
-      <BannerMain
-        videoTitle={initialData.categorias[0].videos[0].titulo}
-        url={initialData.categorias[0].videos[0].url}
-        videoDescription={'Descrição'}
-      />
-
-      <Carousel ignoreFirstVideo category={initialData.categorias[0]} />
-      <Carousel ignoreFirstVideo={false} category={initialData.categorias[1]} />
-      <Carousel ignoreFirstVideo={false} category={initialData.categorias[2]} />
-
-      <Footer />
+            {initialData.map((category, index) => {
+              const isIgnoring = index === 0 ? true : false;
+              return (
+                <Carousel
+                  ignoreFirstVideo={isIgnoring}
+                  category={category}
+                  key={category.id}
+                />
+              );
+            })}
+          </>
+        )}
+      </PageDefault>
     </div>
   );
 };

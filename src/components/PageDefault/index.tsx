@@ -4,7 +4,7 @@ import Footer from '../Footer';
 import styled from 'styled-components';
 
 const Main = styled.main`
-  background-color: var(--black);
+  background-color: #141414;
   color: var(--white);
   flex: 1;
   padding-top: 58px;
@@ -16,7 +16,7 @@ export default function PageDefault(props: any) {
   return (
     <>
       <Menu />
-      <Main>{props.children}</Main>
+      <Main style={props.hasPadding && { padding: 0 }}>{props.children}</Main>
       <Footer />
     </>
   );
