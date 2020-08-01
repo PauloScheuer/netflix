@@ -25,9 +25,8 @@ const Home = () => {
       .then((res) => {
         setInitialData(res);
       })
-      .catch((_) => {
-        console.log(_);
-        alert('Erro na requisição dos vídeos');
+      .catch((err) => {
+        alert('Erro na requisição dos vídeos' + err);
       });
   }, []);
   return (
